@@ -24,11 +24,39 @@ A modern, fast, and visually appealing Flutter application that allows users to 
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 How to Run the Project Locally
 
-### Prerequisites
-Before running the project locally, ensure you have the Flutter SDK installed and configured on your machine.
+Since this app is fully optimized for web-browser simulation without the heavy dependency of Android Studio or local emulators, you can boot it up in seconds!
 
-### Installation & Execution
+1. Clone the repository: `git clone https://github.com/tamifalk/ProjectFlutter.git`
+2. Navigate into the project directory: `cd api_app`
+3. Fetch dependencies: `flutter pub get`
+4. Run on Chrome (Mobile Emulation mode recommended): `flutter run -d chrome`
 
-1. **Clone the repository:**
+---
+
+## 📂 Project Architecture
+
+The core implementation is safely modularized within standard Flutter development targets:
+- `lib/main.dart`: Contains the root entry point, application theme presets (`ThemeData`), stateful landing search controllers, asynchronous HTTP network blocks, and the full-screen interactive detail screen context.
+
+---
+
+## 💡 API Usage Overview
+
+The app communicates directly with TheMealDB endpoint structure:
+- **Search Endpoint:** `https://www.themealdb.com/api/json/v1/1/search.php?s={query}`
+- **Response Layout Parsing:**
+  ```json
+  {
+    "meals": [
+      {
+        "idMeal": "52772",
+        "strMeal": "Teriyaki Chicken Casserole",
+        "strCategory": "Chicken",
+        "strArea": "Japanese",
+        "strInstructions": "...",
+        "strMealThumb": "https://..."
+      }
+    ]
+  }
